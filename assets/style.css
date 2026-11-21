@@ -130,7 +130,13 @@ p { margin: 0; }
 .feature-body { display: grid; gap: 0.6rem; padding: 1.25rem 1.35rem 1.4rem; }
 .feature-body h3 { font-size: 1.45rem; }
 .feature-body .more { font-weight: 500; }
-@media (max-width: 760px) { .areas, .areas-minor, .features { grid-template-columns: 1fr; gap: 1.25rem; } }
+.feature-wide { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: stretch; }
+.feature-wide .feature-body { align-content: center; }
+.feature-fig { margin: 0; display: grid; align-content: center; gap: 0.6rem; padding: 1rem 1rem 0.85rem; background: #ffffff; border-right: 1px solid var(--rule); }
+.feature-fig img { width: 100%; height: auto; display: block; }
+.feature-fig figcaption { font-size: 0.78rem; line-height: 1.45; color: #4a5566; }
+@media (max-width: 760px) { .areas, .areas-minor, .features { grid-template-columns: 1fr; gap: 1.25rem; }
+  .feature-wide { grid-template-columns: 1fr; } .feature-fig { border-right: 0; border-bottom: 1px solid var(--rule); } }
 
 .teasers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .proj-teaser {
